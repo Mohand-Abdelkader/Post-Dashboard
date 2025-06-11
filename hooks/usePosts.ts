@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   getPosts,
@@ -27,6 +28,15 @@ export const useCreatePost = () => {
     mutationFn: createPost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
+      toast.success(
+        "Post Created successfully, Kindly Note that is fake api and does not allow write on the database "
+      );
+    },
+    onError: (error: any) => {
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong, please try again later "
+      );
     },
   });
 };
@@ -54,6 +64,15 @@ export const useDeletePost = () => {
     mutationFn: deletePost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
+      toast.success(
+        "Post deleted successfully, Kindly Note that is fake api and does not allow write on the database "
+      );
+    },
+    onError: (error: any) => {
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong, please try again later "
+      );
     },
   });
 };

@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import { usePost } from "@/hooks/usePosts";
-import { PostCard } from "@/components/posts/PostCard";
+import { PostCard } from "@/components/PostCard";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

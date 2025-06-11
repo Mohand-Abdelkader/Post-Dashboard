@@ -3,8 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { usePosts } from "@/hooks/usePosts";
 import Link from "next/link";
-import { PostCard } from "@/components/posts/PostCard";
-import { PostListSkeleton } from "@/components/posts/PostListSkeleton";
+import { PostCard } from "@/components/PostCard";
+import { PostListSkeleton } from "@/components/PostListSkeleton";
 
 interface Post {
   id: number;
