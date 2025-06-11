@@ -37,7 +37,12 @@ export default function Home() {
             <Link href="/admin">Go to Admin</Link>
           </Button>
           <Button variant="outline" size="lg">
-            Learn More
+            <Link
+              target="_blank"
+              href="https://github.com/Mohand-Abdelkader/Post-Dashboard/blob/main/README.md"
+            >
+              Learn More
+            </Link>
           </Button>
         </div>
       </div>
