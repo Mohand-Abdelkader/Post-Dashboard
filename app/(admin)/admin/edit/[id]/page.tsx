@@ -10,7 +10,7 @@ export default function EditPage() {
   const { mutate: updatePost, isPending } = useUpdatePost();
 
   const handleUpdate = (data: PostFormData) => {
-    updatePost({ ...data, id: Number(id), userId: 1 });
+    updatePost({ ...data, id: Number(id) });
   };
 
   return (

@@ -7,7 +7,7 @@ export default function CreatePage() {
   const { mutate: createPost, isPending } = useCreatePost();
 
   const handleCreate = (data: PostFormData) => {
-    createPost({ ...data, userId: 1 });
+    createPost({ ...data });
   };
 
   return (
