@@ -1,8 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Post Dashboard
 
-## Getting Started
+A simple full-stack **Next.js** app with **TypeScript**, **Tailwind CSS**, **React Query**, and **shadcn/ui**. It allows you to **create, read, update, and delete** posts using a fake API. The app includes both a public landing page and a secure admin dashboard.
 
-First, run the development server:
+## 🚀 Features
+
+- ✅ View public landing page at `/`
+- ✅ Admin dashboard at `/admin`
+- ✅ Full CRUD on posts:
+  - Create new posts
+  - View all posts
+  - Edit existing posts
+  - Delete posts
+- 🖋️ Rich Text Editor (Tiptap) for post content
+- 💬 Toast notifications for actions
+- 💄 Beautiful UI with Tailwind and shadcn/ui
+- 🔄 React Query for data fetching and caching
+- 🔐 Fake API using [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+
+## 🛠️ Tech Stack
+
+- **Next.js 14 (App Router)**
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn/ui**
+- **React Query**
+- **Tiptap** (Rich Text Editor)
+- **React Hook Form**
+- **JSONPlaceholder** (Fake API)
+
+## 📦 Installation
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/your-username/post-dashboard.git
+cd post-dashboard
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. **Start the development server on localhost:3000 with**
 
 ```bash
 npm run dev
@@ -10,27 +55,34 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Important Notes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- This project uses **JSONPlaceholder** as a fake REST API - changes won't persist after refresh
+- The **Tiptap** rich text editor stores content as HTML
+- All data operations are simulated - no real database connection
+- Authentication is not implemented (demo purposes only)
+- The project is fully typed with TypeScript for easier maintenance
+- Can be easily connected to a real backend by modifying `lib/api.ts`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧾 License
 
-## Learn More
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.  
+Free to use, modify, and distribute for personal and commercial purposes.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👤 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Mohand**  
+📧 *mohand27m@gmail.com*  
+🔗 [GitHub](https://github.com/mohand-abdelkader)
 
-## Deploy on Vercel
+💡 Feel free to reach out for:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Feedback
+- Collaboration opportunities
+- Questions about implementation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+_Built with Next.js, TypeScript, and passion._
