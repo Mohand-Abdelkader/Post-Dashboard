@@ -8,8 +8,12 @@ export const getPosts = async () => {
 
 export const getPostById = async (id: number) => {
   const res = await fetch(`${BASE_URL}/posts/${id}`);
+  console.log(res);
+  if (res.status === 404) throw new Error("Post not found");
   if (!res.ok) throw new Error("Failed to fetch post");
-  return res.json();
+  const data = await res.json();
+
+  return data;
 };
 
 export const createPost = async (post: { title: string; body: string }) => {

@@ -1,5 +1,6 @@
 import toast from "react-hot-toast";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import {
   getPosts,
   getPostById,
@@ -23,11 +24,13 @@ export const usePost = (id: number) => {
 };
 
 export const useCreatePost = () => {
+  const router = useRouter();
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: createPost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
+      router.push("/admin");
       toast.success(
         "Post Created successfully, Kindly Note that is fake api and does not allow write on the database "
       );
@@ -42,6 +45,7 @@ export const useCreatePost = () => {
 };
 
 export const useUpdatePost = () => {
+  const router = useRouter();
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({
@@ -54,6 +58,16 @@ export const useUpdatePost = () => {
     }) => updatePost(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
+      router.push("/admin");
+      toast.success(
+        "Post Updated successfully, Kindly Note that is fake api and does not allow write on the database "
+      );
+    },
+    onError: (error: any) => {
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong, please try again later "
+      );
     },
   });
 };

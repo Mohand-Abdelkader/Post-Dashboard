@@ -17,10 +17,9 @@ export default function Home() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Hero Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Welcome to{" "}
+          Welcome to&nbsp;
           <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             Post Dashboard
           </span>
@@ -43,7 +42,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Posts Section */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Latest Posts</h2>
@@ -70,8 +68,8 @@ export default function Home() {
 
             {data?.length > 6 && (
               <div className="text-center mt-6">
-                <Button variant="outline">
-                  View All Posts ({data.length})
+                <Button variant="outline" asChild>
+                  <Link href="/posts">View All Posts ({data.length})</Link>
                 </Button>
               </div>
             )}

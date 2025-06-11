@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
-import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Header from "@/components/ui/Header";
+import Sidebar from "@/components/ui/Sidebar";
 import { ReactQueryProvider } from "@/lib/react-query-provider";
 export const metadata: Metadata = {
   title: "Post Dashboard App",

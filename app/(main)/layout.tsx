@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import { ReactQueryProvider } from "@/lib/react-query-provider";
-import Navbar from "@/components/common/Navbar";
-import Footer from "@/components/common/Footer";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Post Dashboard App",

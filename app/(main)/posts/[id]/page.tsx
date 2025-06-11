@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 export default function Page() {
   const { id } = useParams();
-  const { data, isLoading, isError } = usePost(Number(id));
+  const { data, isLoading, error } = usePost(Number(id));
 
   if (isLoading)
     return (
@@ -16,8 +16,14 @@ export default function Page() {
         <Skeleton className="h-4 w-full" />
       </div>
     );
-  if (isError) return <div>Error loading post</div>;
-  if (!data) return <div>Post not found</div>;
+  if (error) {
+    return (
+      <div className="text-center py-8 text-red-500">
+        {error.message || "Failed to load post"}
+      </div>
+    );
+  }
+
   return (
     <>
       <PostCard {...data} />
